@@ -1,0 +1,20 @@
+---
+title: "Proyecto de Análisis Diversidad y Rentabilidad"
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Club de R para RRHH
+## Proyecto de Estudio Diversidad y Rentabilidad
+
+El objetivo de este proyecto de estudio es analizar la facturación de las empresas Fortune 500 y la relación que hay con la diversidad en sus puestos ejecutivos y en la dotación en general.
+
+Para tal fin, vamos a usar datos del ránking Fortune 500 de Estados Unidos publicado en [Kaggle](https://www.kaggle.com/fortune-inc/f500-diversity/data?select=Data+Dictionary.csv).
