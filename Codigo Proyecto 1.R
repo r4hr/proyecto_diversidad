@@ -1,18 +1,20 @@
+
+
+#Desde aqui les voy diciendo sorry por los comentarios realmente tontos. Los he marcado con -T- al principio jajajja 
+
 library(tidyverse)
 library(ggplot2)
-library(googlesheets4)
 library(gargle)
 
+#Cargando las variables desde la carpeta local - Google Sheets tardaba muchisimo
 
-#Guarde la data en la carpeta compartida de Drive
-best_places_diversity_2017<-sheets_read("https://docs.google.com/spreadsheets/d/1JXYQnRbevDvJ7ZFBQVXGQrxE2d5LEpP62zBxn1BkOkg/edit#gid=0",skip=2)
-head(best_places_diversity_2017)
+getwd()
 
+diversidad_2017<-read.csv("diversity_data_2017.csv")
 
-Diversity_2017<-sheets_read("https://docs.google.com/spreadsheets/d/1JXYQnRbevDvJ7ZFBQVXGQrxE2d5LEpP62zBxn1BkOkg/edit#gid=0",sheet="Diversity_2017",skip=2)
-head(Diversity_2017)
+# -T- Las subi como factor porque es un ranking (?... no se si esta bien?)
 
-#testing making a change and uploading
+ranking_2017<-read.csv("best_places_diversity_2017.csv",stringsAsFactors = TRUE)
+glimpse(ranking_2017)
 
-testingdata<-read.csv("diversity_data.csv")
 
