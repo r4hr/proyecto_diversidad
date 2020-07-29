@@ -21,7 +21,7 @@ glimpse(ranking_2017)
 #Ver y limpiar la base 
 #-T- names y colnames hacen lo mismo? Parece que si
 colnames(diversidad_2017_orig)
-names(diversidad_2017)
+names(diversidad_2017_orig)
 
 #Cambiar nombres a las columnas: name a empresa
 prueba<-rename(diversidad_2017_orig, empresa = name)
