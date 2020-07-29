@@ -11,7 +11,7 @@ library(gargle)
 getwd()
 
 diversidad_2017_orig<-read.csv("diversity_data_2017.csv", stringsAsFactors = FALSE)
-glimpse(diversidad_2017)
+glimpse(diversidad_2017_orig)
 
 
 # -T- Las subi como factor porque es un ranking
@@ -20,7 +20,7 @@ glimpse(ranking_2017)
 
 #Ver y limpiar la base 
 #-T- names y colnames hacen lo mismo? Parece que si
-colnames(diversidad_2017)
+colnames(diversidad_2017_orig)
 names(diversidad_2017)
 
 #Cambiar nombres a las columnas: name a empresa
@@ -40,6 +40,11 @@ dim(prueba)
 
 
 # (?!!) Como convertir todos los numeros que estan como chr a int (?) - Me salio solo hacerlo uno por uno asi que solo hice los totales
+str(prueba)
+
+# Pablo - Probando modificar todas las columnas de chr que son numeros a num
+
+prueba[,7:210] <- sapply(prueba[,7:10], as.numeric) # selecciona las columnas indexadas de la 7 a la 210 y les aplica la funcion as.numeric
 str(prueba)
 
 totales<-prueba%>%
