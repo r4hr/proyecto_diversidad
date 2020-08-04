@@ -3,7 +3,6 @@
 #Desde aqui les voy diciendo sorry por los comentarios realmente tontos
 
 library(tidyverse)
-library(ggplot2)
 library(gargle)
 
 #Cargando las variables desde la carpeta local - Google Sheets tardaba muchisimo
@@ -61,7 +60,9 @@ ggplot(totales,aes(x=reorder(empresa,p_femenino),y=p_femenino))+
   theme_minimal()+
   coord_flip()+
   geom_text(aes(label=p_femenino*100))+
-  labs(title="Poblacion Femenina por Empresa",subtitle = "Subtitulo",x="",y="",caption = "Por porcentajes para poder comparar?")
+  labs(title="Poblacion Femenina por Empresa",x="",y="",subtitle = "En porcentajes",
+       caption = "Datos extraídos de Kaggle 'Fortune 500 Diversity' \n Detailed diversity metrics for the Fortune 500 companies'"
+)
 
 
 ####Conclusion 1: Solo en dos empresas hay mujeres que hombres: Citigroup y Merck####
@@ -201,7 +202,10 @@ ggplot(totales_etnias_2017) +
   labs(title = "Vista de todas las empresas a la vez",
        subtitle = "Por etnia",
        x = "",
-       y = "Porcentaje") #Como mostrarlo como porcentaje??
+       y = "Porcentaje")+ #Como mostrarlo como porcentaje??
+  scale_y_continuous(limits = c(0,1), labels = scales::percent)+
+  theme_minimal()
+  
 
 
 
